@@ -18,7 +18,7 @@ class QuantumChannel
     private:
     
     
-        string message_header, blockchain_header;
+        string message_header;
         int block_index;
         int i, j, N, dim, mini, maxi;
         int dim_qubit, dim_bell, dim_monte;
