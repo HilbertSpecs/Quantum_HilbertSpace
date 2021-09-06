@@ -25,7 +25,7 @@ int main(){
         QuantumChannel Message_1;
         
     
-        //BlockChain Descriptor
+        //Channel Descriptor
         ChannelName.messageDescriptor(0, "QuantumInformationChannel_1");
     
         //Message_1
@@ -42,7 +42,7 @@ int main(){
     
         
     
-        //BlockChain
+        //Channel
         quantumInformationChannel_1.appendNode(ChannelName);
         quantumInformationChannel_1.appendNode(Message_1);
         
