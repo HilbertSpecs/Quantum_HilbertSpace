@@ -6,8 +6,8 @@
 #include <cstdlib>
 #include <ctime>
 #include <cmath>
-#include "QuantumChannel.hpp"
-#include "LinkedList.hpp"
+#include "hilbertspace/QuantumChannel.hpp"
+#include "hilbertspace/LinkedList.hpp"
 using namespace std;
 
 //declare variables

@@ -6,7 +6,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <cmath>
-#include "QuantumChannel.hpp"
+#include "include/hilbertspace/QuantumChannel.hpp"
 using namespace std;
 
 void QuantumChannel::messageDescriptor(int bl_ind, string mes_hd){

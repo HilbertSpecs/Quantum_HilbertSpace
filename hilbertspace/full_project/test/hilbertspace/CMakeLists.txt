@@ -1,0 +1,4 @@
+add_executable(hilbertspace_test hilbertspace_test.cpp)
+target_link_libraries(hilbertspace_test PRIVATE hilbertspace_static)
+AddTests(hilbertspace_test)
+EnableCoverage(hilbertspace_obj)
