@@ -9,10 +9,22 @@
 #include "include/hilbertspace/QuantumChannel.hpp"
 using namespace std;
 
-void QuantumChannel::messageDescriptor(int bl_ind, string mes_hd){
+void QuantumChannel::setmessageDescriptor(int bl_ind, string mes_hd){
     
     block_index = bl_ind;
     message_header = mes_hd;
+    
+}
+
+int QuantumChannel::getBlockIndex() const {
+    
+    return block_index;
+    
+}
+
+string QuantumChannel::getMessageHeader() const {
+    
+    return message_header;
     
 }
 

@@ -123,7 +123,9 @@ class QuantumChannel
     */
 	public:
     
-        void messageDescriptor(int, string);
+        virtual void setmessageDescriptor(int, string);
+        virtual int getBlockIndex() const;
+        virtual string getMessageHeader() const;
         double initialize(int, int, int);
         void generateRandomDistribution(double, int);
         void generateEnergyField(int, int, int);
