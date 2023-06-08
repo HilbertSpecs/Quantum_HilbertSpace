@@ -7,7 +7,7 @@
 #include <ctime>
 #include <cmath>
 #include "hilbertspace/QuantumChannel.hpp"
-#include "hilbertspace/LinkedList.hpp"
+#include "LinkedList.hpp"
 using namespace std;
 
 //declare variables
@@ -26,10 +26,10 @@ int main(){
         
     
         //Channel Descriptor
-        ChannelName.messageDescriptor(0, "QuantumInformationChannel_1");
+        ChannelName.setmessageDescriptor(0, "QuantumInformationChannel_1");
     
         //Message_1
-        Message_1.messageDescriptor(1, "Message_1");
+        Message_1.setmessageDescriptor(1, "Message_1");
         Message_1.initialize(0, 1, 100);
         Message_1.generateRandomDistribution(.01,100);
     	  Message_1.generateEnergyField(1000, 1, 100);
