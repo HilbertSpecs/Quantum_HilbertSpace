@@ -6,8 +6,9 @@
 #include <cstdlib>
 #include <ctime>
 #include <cmath>
+#include <list>
 #include "hilbertspace/QuantumChannel.hpp"
-#include "LinkedList.hpp"
+//#include "LinkedList.hpp"
 using namespace std;
 
 //declare variables
@@ -19,7 +20,8 @@ using namespace std;
 //main function 
 int main(){
 
-        LinkedList<QuantumChannel> quantumInformationChannel_1;
+        //LinkedList<QuantumChannel> quantumInformationChannel_1;
+        list<QuantumChannel> quantumInformationChannel_1;
         QuantumChannel ChannelName;
     
         QuantumChannel Message_1;
@@ -43,12 +45,14 @@ int main(){
         
     
         //Channel
-        quantumInformationChannel_1.appendNode(ChannelName);
-        quantumInformationChannel_1.appendNode(Message_1);
+        quantumInformationChannel_1.push_back(ChannelName);
+        quantumInformationChannel_1.push_back(Message_1);
         
     
         cout << "QuantumInformationChannel: " << endl;
-        quantumInformationChannel_1.displayList();
+    for(QuantumChannel qc : quantumInformationChannel_1){
+        cout << qc << endl;
+    }
     
 	return 0;
 }
