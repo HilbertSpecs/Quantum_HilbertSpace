@@ -10,22 +10,16 @@
 using namespace std;
 
 void QuantumChannel::setmessageDescriptor(int bl_ind, string mes_hd){
-    
     block_index = bl_ind;
     message_header = mes_hd;
-    
 }
 
 int QuantumChannel::getBlockIndex() const {
-    
     return block_index;
-    
 }
 
 string QuantumChannel::getMessageHeader() const {
-    
     return message_header;
-    
 }
 
 double QuantumChannel::initialize(int min, int max, int num){
@@ -54,7 +48,6 @@ double QuantumChannel::initialize(int min, int max, int num){
     r110 = new double[N];
     r111 = new double[N];
     
-    
     for(i = 0; i < N;i++)
     {
         d000[i] = 0;
@@ -82,9 +75,7 @@ double QuantumChannel::initialize(int min, int max, int num){
     cout << "step: " << step << endl;
     
     return step;
-    
 }
-
 
 void QuantumChannel::generateRandomDistribution(double st, int num){
     
@@ -104,7 +95,6 @@ void QuantumChannel::generateRandomDistribution(double st, int num){
         d101[i] = step + d101[i-1];
         d110[i] = step + d110[i-1];
         d111[i] = step + d111[i-1];
-        
         
         cout << d000[i] << setw(5) << d001[i] << setw(5) << d010[i] << setw(5) <<
         d100[i] << setw(5) << d011[i] << setw(5) << d101[i] << setw(5) <<
@@ -139,7 +129,6 @@ void QuantumChannel::generateRandomDistribution(double st, int num){
         
     }
     
-    
 }
 
 void QuantumChannel::generateEnergyField(int minim, int maxim, int num){
@@ -162,7 +151,6 @@ void QuantumChannel::generateEnergyField(int minim, int maxim, int num){
     E111 = new double[N];
     
     for(i = 0; i < N;i++){
-        
         E000[i] = 0;
         E001[i] = 0;
         E010[i] = 0;
@@ -171,7 +159,6 @@ void QuantumChannel::generateEnergyField(int minim, int maxim, int num){
         E101[i] = 0;
         E110[i] = 0;
         E111[i] = 0;
-        
     }
     cout << "Energy Field: (mJ)" << endl;
     for(i = 0; i < N;i++){
@@ -189,16 +176,13 @@ void QuantumChannel::generateEnergyField(int minim, int maxim, int num){
         E100[i] << setw(5) << E011[i] << setw(5) << E101[i] << setw(5) <<
         E110[i] << setw(5) << E111[i] << endl;
         
-        
     }
-    
     
 }
 
 void QuantumChannel::generateHamiltonian(int d){
     
     dim = d;
-    
     Hm = new double*[dim];
     
     for(i = 0; i < dim;i++)
@@ -206,18 +190,14 @@ void QuantumChannel::generateHamiltonian(int d){
     
     for(i = 0; i < dim;i++){
         for(j = 0; j < dim;j++){
-            
             Hm[i][j] = 0;
         }
     }
     cout << "Hamiltonian: " << endl;
     for(i = 0; i < dim;i++){
         for(j = 0; j < dim;j++){
-            
             Hm[i][j] = rand()/((double) RAND_MAX);
-            
             cout << Hm[i][j];
-            
         }
         cout << endl;
     }
@@ -266,7 +246,6 @@ void QuantumChannel::generateQuantumChannel(int di_qu, int di_be, int di_mon){
     for(i = 0; i < dim_monte;i++)
         HmMonte[i] = new double[dim_monte];
     
-    
     for(i = 0; i < N;i++){
         
         a0[i] = 0;
@@ -294,26 +273,21 @@ void QuantumChannel::generateQuantumChannel(int di_qu, int di_be, int di_mon){
         o1110[i] = 0;
         p1111[i] = 0;
     }
-    
     for(i=0;i < dim_qubit;i++){
         for(j = 0; j < dim_qubit;j++){
             HmQubit[i][j] = 0;
         }
     }
-    
     for(i = 0; i < dim_bell;i++){
         for(j = 0; j < dim_bell;j++){
             HmBell[i][j] = 0;
         }
     }
-    
     for(i = 0; i < dim_monte;i++){
         for(j = 0; j < dim_monte;j++){
             HmMonte[i][j] = 0;
         }
     }
-    
-    
     
 }
 
@@ -324,12 +298,10 @@ void QuantumChannel::encodeQuantumInformation(){
             HmQubit[i][j] = rand()/((double) RAND_MAX);
         }
     }
-    
     for(i = 0; i < dim_bell;i++){
         for(j = 0; j < dim_bell;j++)
         {
             HmBell[i][j] = rand()/((double) RAND_MAX);
-            
         }
     }
     for(i = 0; i < dim_monte;i++){
@@ -337,8 +309,6 @@ void QuantumChannel::encodeQuantumInformation(){
             HmMonte[i][j] = rand()/((double) RAND_MAX);
         }
     }
-    
-    
     
 }
 
@@ -663,7 +633,6 @@ void QuantumChannel::MonteCarloRandomWalker(int mx_tr, int num_wal, double mv_pr
     cout << "RandomWalker variance: " << setprecision(5) <<  setw(10) << variance_0000 << setw(10) << variance_0001 << setw(10) << variance_0010 << setw(10) << variance_0011 << setw(10) << variance_0100 << setw(10) << variance_0101 << setw(10) << variance_0110 << setw(10) << variance_0111 << setw(10) << variance_1000 << setw(10) << variance_1001 << setw(10) << variance_1010 << setw(10) << variance_1011 << setw(10) << variance_1100 << setw(10) << variance_1101 << setw(10) << variance_1110 << setw(10) << variance_1111 << endl;
 }
 
-
 void QuantumChannel::deallocateMemory(){
     
     for(i = 0;i < dim;i++)
@@ -684,7 +653,6 @@ void QuantumChannel::deallocateMemory(){
     for(i = 0; i < dim_monte;i++)
     {
         delete [] HmMonte[i];
-        
     }
     
     delete [] Hm;
@@ -777,7 +745,6 @@ void QuantumChannel::deallocateMemory(){
     delete [] walk2_cumulative1101;
     delete [] walk2_cumulative1110;
     delete [] walk2_cumulative1111;
-    
     
     i = 0;
     j = 0;

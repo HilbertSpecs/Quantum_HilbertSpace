@@ -8,7 +8,6 @@
 #include <random>
 using namespace std;
 
-
 #ifndef QUANTUMCHANNEL_HPP
 #define QUANTUMCHANNEL_HPP
 
@@ -16,7 +15,6 @@ class QuantumChannel
 {
 
     private:
-    
     
         string message_header;
         int block_index;
@@ -35,7 +33,7 @@ class QuantumChannel
     
         double *E000, *E001, *E010, *E100, *E011, *E101, *E110, *E111;
     
-    //MonteCarlo Walker
+        //MonteCarlo Walker
         int max_trials, number_walks;
         double move_probability;
     
@@ -140,7 +138,6 @@ class QuantumChannel
     friend ostream &operator << (ostream &, const QuantumChannel &);
 
 };
-
 
 #endif
 
